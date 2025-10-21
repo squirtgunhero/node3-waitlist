@@ -154,21 +154,50 @@ export default function App() {
 
       {/* Footer */}
       <footer className="relative py-16 px-6 border-t border-white/5">
-        <div className="max-w-6xl mx-auto text-center">
-          <motion.p 
-            className="text-white/40 mb-4"
+        <div className="max-w-6xl mx-auto">
+          {/* Disclaimers */}
+          <motion.div
+            className="text-center mb-8 max-w-4xl mx-auto"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            No spam. Unsubscribe anytime.
-          </motion.p>
-          <motion.p 
-            className="text-white/30"
+            <p className="text-white/30 text-xs leading-relaxed mb-4">
+              * Earnings estimates are illustrative and not guaranteed. Actual earnings depend on hardware specifications, network demand, uptime, and market conditions. node³ is in development. By joining the waitlist, you agree to receive updates about our platform launch.
+            </p>
+            <p className="text-white/30 text-xs leading-relaxed">
+              We respect your privacy. Your email is stored securely and will only be used to contact you about node³. You can unsubscribe at any time. We will never share your information with third parties.
+            </p>
+          </motion.div>
+
+          {/* Links */}
+          <motion.div
+            className="flex flex-wrap justify-center gap-6 mb-6 text-sm"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
+          >
+            <a href="mailto:contact@node-3.com" className="text-white/40 hover:text-[#00D9FF] transition-colors">
+              Contact
+            </a>
+            <span className="text-white/20">•</span>
+            <button className="text-white/40 hover:text-[#00D9FF] transition-colors">
+              Privacy Policy
+            </button>
+            <span className="text-white/20">•</span>
+            <button className="text-white/40 hover:text-[#00D9FF] transition-colors">
+              Terms of Service
+            </button>
+          </motion.div>
+
+          {/* Copyright */}
+          <motion.p 
+            className="text-white/30 text-center text-sm"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
           >
             © 2025 node³. All rights reserved.
           </motion.p>
