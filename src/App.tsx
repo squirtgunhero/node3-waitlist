@@ -1,12 +1,17 @@
 import { motion } from 'motion/react';
 import { DollarSign, Gauge, Lock, TrendingUp } from 'lucide-react';
+import { useState } from 'react';
 import { Toaster } from './components/ui/sonner';
 import { ParticleNetwork } from './components/ParticleNetwork';
 import { WaitlistForm } from './components/WaitlistForm';
 import { BenefitCard } from './components/BenefitCard';
 import { HardwareSection } from './components/HardwareSection';
+import { PrivacyPolicy } from './components/PrivacyPolicy';
+import { TermsOfService } from './components/TermsOfService';
 
 export default function App() {
+  const [showPrivacy, setShowPrivacy] = useState(false);
+  const [showTerms, setShowTerms] = useState(false);
   return (
     <div className="min-h-screen bg-black text-white">
       <Toaster position="top-center" />
@@ -182,11 +187,17 @@ export default function App() {
               Contact
             </a>
             <span className="text-white/20">•</span>
-            <button className="text-white/40 hover:text-[#00D9FF] transition-colors">
+            <button 
+              onClick={() => setShowPrivacy(true)}
+              className="text-white/40 hover:text-[#00D9FF] transition-colors"
+            >
               Privacy Policy
             </button>
             <span className="text-white/20">•</span>
-            <button className="text-white/40 hover:text-[#00D9FF] transition-colors">
+            <button 
+              onClick={() => setShowTerms(true)}
+              className="text-white/40 hover:text-[#00D9FF] transition-colors"
+            >
               Terms of Service
             </button>
           </motion.div>
@@ -203,6 +214,10 @@ export default function App() {
           </motion.p>
         </div>
       </footer>
+
+      {/* Modals */}
+      {showPrivacy && <PrivacyPolicy onClose={() => setShowPrivacy(false)} />}
+      {showTerms && <TermsOfService onClose={() => setShowTerms(false)} />}
     </div>
   );
 }
