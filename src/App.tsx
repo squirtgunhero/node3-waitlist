@@ -183,7 +183,7 @@ export default function App() {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            <a href="mailto:contact@node-3.com" className="text-white/40 hover:text-[#00D9FF] transition-colors">
+            <a href="mailto:contactnode3@gmail.com" className="text-white/40 hover:text-[#00D9FF] transition-colors">
               Contact
             </a>
             <span className="text-white/20">•</span>

@@ -118,8 +118,8 @@ export function TermsOfService({ onClose }: TermsOfServiceProps) {
                 If you have any questions about these Terms of Service, please contact us at:
               </p>
               <p className="mt-2">
-                <a href="mailto:contact@node-3.com" className="text-[#00D9FF] hover:underline">
-                  contact@node-3.com
+                <a href="mailto:contactnode3@gmail.com" className="text-[#00D9FF] hover:underline">
+                  contactnode3@gmail.com
                 </a>
               </p>
             </section>
