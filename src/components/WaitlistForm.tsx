@@ -4,7 +4,7 @@ import { Input } from './ui/input';
 import { Button } from './ui/button';
 import { toast } from 'sonner@2.0.3';
 import { CheckCircle2 } from 'lucide-react';
-import { trackWaitlistSignup } from '../utils/analytics';
+import { trackAllWaitlistSignup } from '../utils/analytics';
 
 export function WaitlistForm() {
   const [email, setEmail] = useState('');
@@ -49,8 +49,8 @@ export function WaitlistForm() {
       // Note: no-cors mode doesn't allow reading response, so we assume success
       console.log('Waitlist submission sent:', { email });
       
-      // Track the waitlist signup in Google Analytics
-      trackWaitlistSignup(email, 'main_form');
+      // Track the waitlist signup in Google Analytics + Facebook Pixel
+      trackAllWaitlistSignup(email, 'main_form');
       
       setIsSubmitted(true);
       toast.success('Successfully joined the waitlist!');
